@@ -1,0 +1,18 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}
+	<title>DETAILS</title>
+{% endblock %}
+
+<form method="post">
+{% csrf_token %}
+
+{% block content %}
+
+<h1>{{ object.course_id }}</h1>
+<p>{{ object.c_name }}</p>
+<h1>{{ object.c_fees }}</h1>
+
+</form>
+{% endblock %}

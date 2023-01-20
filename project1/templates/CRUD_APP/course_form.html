@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+	<title>SAVE PAGE</title>
+{% endblock %}
+
+{% block content %}
+<div class="container jumbotron">
+<form method="post">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <input type="submit" value="SAVE" class="btn btn-outline-warning">
+</div>
+</form>
+{% endblock %}
+

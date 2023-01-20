@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title>SHOW PAGE</title>
+{% endblock %}
+{% block content %}
+<ul>
+    {% for object in object_list %}
+    <li>{{ object.course_id }}</li>
+    <li>{{ object.c_name }}</li>
+    <li>{{ object.c_fees }}</li>
+    <li>
+          <a href="{% url 'details_url' object.id %}" > <button type="button" >DETAILS</button></a>
+
+          <a href="{% url 'update_url' object.id %}"  ><button type="button" >UPDATE</button></a>
+
+          <a href="{% url 'delete_url' object.id %}"  ><button type="button" >DELETE</button> </a>
+
+    </li>
+
+    <hr/>
+    <!-- If object_list is empty  -->
+    {% empty %}
+    <li>No objects yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
